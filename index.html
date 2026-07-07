@@ -186,6 +186,31 @@
         font-weight: 800;
       }
 
+      .fight-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 26px;
+        padding: 13px 18px;
+        color: white;
+        background: linear-gradient(90deg, var(--blue), #1d7f97);
+        border-radius: 8px;
+        box-shadow: 0 14px 28px rgba(0, 94, 168, 0.22);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .fight-link::after {
+        content: ">";
+        font-size: 1.1rem;
+        transition: transform 160ms ease;
+      }
+
+      .fight-link:hover::after,
+      .fight-link:focus-visible::after {
+        transform: translateX(4px);
+      }
+
       .signal-stack {
         display: grid;
         gap: 18px;
@@ -333,6 +358,7 @@
             planning, engineering, and communities across the map.
           </p>
           <p class="source-line">from FHU National Services Group</p>
+          <a class="fight-link" href="fight.html">Watch the alien fight the robot</a>
         </div>
 
         <aside class="signal-stack" aria-label="FHU themed graphics">
