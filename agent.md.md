@@ -273,6 +273,16 @@ final
 
 The `main` branch should be treated as the stable version.
 
+Nobody should push directly to `main`.
+
+The normal shared workflow should be:
+
+1. Create a GitHub issue for the proposed change.
+2. Create a short-lived branch for the work.
+3. Open a pull request from that branch.
+4. Review the pull request.
+5. Merge the pull request after review.
+
 Feature branches should contain unfinished work, experiments, revisions, and bug fixes.
 
 Use one branch per meaningful unit of work.
