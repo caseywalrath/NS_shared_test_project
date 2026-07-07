@@ -186,6 +186,39 @@
         font-weight: 800;
       }
 
+      .professionalism-check {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        margin-top: 28px;
+      }
+
+      .professionalism-check button {
+        padding: 0.72rem 1rem;
+        border: 1px solid rgba(0, 94, 168, 0.28);
+        border-radius: 8px;
+        background: white;
+        color: var(--blue);
+        cursor: pointer;
+        font: inherit;
+        font-weight: 800;
+        box-shadow: 0 10px 24px rgba(23, 33, 47, 0.08);
+      }
+
+      .professionalism-check button:hover,
+      .professionalism-check button:focus-visible {
+        border-color: var(--blue);
+      }
+
+      .professionalism-status {
+        flex: 1 1 240px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
       .signal-stack {
         display: grid;
         gap: 18px;
@@ -299,6 +332,11 @@
           padding: 26px 20px;
         }
 
+        .professionalism-check {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
         .signal-stack {
           grid-template-columns: 1fr;
         }
@@ -333,6 +371,14 @@
             planning, engineering, and communities across the map.
           </p>
           <p class="source-line">from FHU National Services Group</p>
+          <div class="professionalism-check">
+            <button type="button" id="professionalism-check">
+              Run professionalism check
+            </button>
+            <p class="professionalism-status" id="professionalism-status" aria-live="polite">
+              Status: professionally suspicious, but not yet client-ready.
+            </p>
+          </div>
         </div>
 
         <aside class="signal-stack" aria-label="FHU themed graphics">
@@ -349,5 +395,13 @@
         </aside>
       </section>
     </main>
+    <script>
+      const button = document.querySelector('#professionalism-check');
+      const status = document.querySelector('#professionalism-status');
+
+      button.addEventListener('click', () => {
+        status.textContent = 'Status: still a test page. Please do not submit this to a client without at least one meaningful pause.';
+      });
+    </script>
   </body>
 </html>
